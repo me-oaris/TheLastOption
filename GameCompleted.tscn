@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bxbvmynjh3xcx"]
+
+[ext_resource type="Script" uid="uid://cre4r40bk828x" path="res://game_completed.gd" id="1_3tben"]
+[ext_resource type="FontFile" uid="uid://c0ftrjbkrtpcw" path="res://Fonts/GrapeSoda.ttf" id="2_nhwm4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vqy3"]
+bg_color = Color(0.5093882, 0.03935489, 0.090850376, 1)
+
+[node name="GameCompleted" type="Control" unique_id=1907875118]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3tben")
+
+[node name="Label" type="Label" parent="." unique_id=1573309887]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -511.5
+offset_top = -61.0
+offset_right = 511.5
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_nhwm4")
+theme_override_font_sizes/font_size = 64
+text = "You found the light... You survived."
+horizontal_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=748392015]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.5
+offset_top = 40.0
+offset_right = 178.5
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="RestartButton" type="Button" parent="VBox" unique_id=1296602726]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_nhwm4")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_3vqy3")
+text = "Play Again"
+
+[node name="MenuButton" type="Button" parent="VBox" unique_id=928374012]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_nhwm4")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_3vqy3")
+text = "Main Menu"
+
+[connection signal="pressed" from="VBox/RestartButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBox/MenuButton" to="." method="_on_menu_button_pressed"]

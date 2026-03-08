@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://c6u7v8x2b1e4r"]
+
+[ext_resource type="Script" uid="uid://pw0f6cdy1hdi" path="res://intro.gd" id="1_intro"]
+[ext_resource type="FontFile" uid="uid://c0ftrjbkrtpcw" path="res://Fonts/GrapeSoda.ttf" id="2_font"]
+
+[node name="Intro" type="Control" unique_id=2024899372]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_intro")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2124523084]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=603743235]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1690901516]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="StoryLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=1329902932]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_font")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]The world has fallen into eternal darkness...[/center]"
+fit_content = true
+autowrap_mode = 2
+
+[node name="SkipLabel" type="Label" parent="." unique_id=264534258]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -50.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
+text = "Press any key to skip"
+horizontal_alignment = 2
